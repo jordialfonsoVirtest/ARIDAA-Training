@@ -1,0 +1,13 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1045 &1
+EditorBuildSettings:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Scenes/VIDAA MR.unity
+    guid: 08cb9bd1e14cfec488580e0f908219dc
+  m_configObjects:
+    Unity.XR.Oculus.Settings: {fileID: 11400000, guid: bed4b2c008ad46c458c75e0769d882b7, type: 2}
+    com.unity.xr.management.loader_settings: {fileID: 11400000, guid: 7c4f80c92a3afc04e85ed5a52d3eb609, type: 2}
