@@ -37,7 +37,7 @@ public class ContourRenderer : MonoBehaviour
     public void Render(Contours contour)
     {
         RenderContourPoints(contour);
-        transform.localScale = new Vector3(0.01f, 0.01f, 0.01f);
+        transform.localScale = new Vector3(1, 1, 1);
         this.gameObject.SetActive(false);
     }
 

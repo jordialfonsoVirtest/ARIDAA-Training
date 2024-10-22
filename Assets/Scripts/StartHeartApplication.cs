@@ -6,6 +6,8 @@ public class StartHeartApplication : MonoBehaviour
 {
     // Start is called before the first frame update
     [SerializeField] private GameObject heartPivot;
+    [SerializeField] private GameObject centrelineManager;
+    [SerializeField] private GameObject laaMeasurements;
 
     private bool isExecuted = false;
     void Start()
@@ -19,6 +21,8 @@ public class StartHeartApplication : MonoBehaviour
         if (!isExecuted)
         {
             StartCoroutine(Wait(1));
+            centrelineManager.SetActive(false);
+            laaMeasurements.SetActive(false);
             heartPivot.SetActive(false);
             heartPivot.GetComponent<UIOnEnableLocation>().enabled = true;
             isExecuted = true;

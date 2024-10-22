@@ -206,13 +206,15 @@ public class LAAMeasurementsManager : MonoBehaviour
         foreach (CentrelineMeasurement _centreline in _LAAMeasurements.CentrelineMeasurements)
         {
             string centrelineId = i.ToString();
-
+            Debug.Log("centrelineId: " + centrelineId);
             string currentCentrelineId = CentrelineManager.Instance.GetActiveCentreline().name.Split(" ")[1];
-            
+            Debug.Log("currentCentrelineId: " + currentCentrelineId);
 
-            if(centrelineId == currentCentrelineId)
+
+            if (centrelineId == currentCentrelineId)
             {
                 currentCentrelineMeasures = _LAAMeasurements.CentrelineMeasurements[i-1];
+                Debug.Log("xd");
             }
 
             i++;

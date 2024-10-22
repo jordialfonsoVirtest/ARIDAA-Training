@@ -3,7 +3,7 @@ Shader "Slices/Z_Downwards" {
       _Color("Color", Color) = (1.0,1.0,1.0)
       _MainTex("Texture", 2D) = "white" {}
       _BumpMap("Bumpmap", 2D) = "bump" {}
-      _Offset("Extrusion Amount", Range(100,175)) = 0
+      _Offset("Extrusion Amount", Range(244,333)) = 0
     }
         SubShader{
           Tags { "RenderType" = "Opaque" }

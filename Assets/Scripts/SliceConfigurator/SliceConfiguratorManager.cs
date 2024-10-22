@@ -7,6 +7,7 @@ public class SliceConfiguratorManager : MonoBehaviour
 {
     [SerializeField] private GameObject heart;
     [SerializeField] private GameObject currentSlicer;
+    [SerializeField] private GameObject transparencyToggle;
     private float[] positionBoundaries = { 0.0f, 0.0f };
     private float[] shaderBoundaries = { 0.0f, 0.0f };
     private float shaderBoundariesDistance;
@@ -55,6 +56,8 @@ public class SliceConfiguratorManager : MonoBehaviour
 
         currentSlicer.GetComponent<Slicer>().SetIsTransparent(isTransparent);
         heart.GetComponent<Renderer>().material = currentSlicer.GetComponent<Slicer>().GetSlicerMaterial();
+        transparencyToggle.GetComponent<TransparencyToggle>().SetOpaqueMaterial(currentSlicer.GetComponent<Slicer>().GetOpaqueMaterial());
+        transparencyToggle.GetComponent<TransparencyToggle>().SetTransparentMaterial(currentSlicer.GetComponent<Slicer>().GetTransparentMaterial());
     }
     // Start is called before the first frame update
     void Start()

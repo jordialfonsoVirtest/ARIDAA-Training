@@ -10,6 +10,16 @@ public class TransparencyToggle : MonoBehaviour
     [SerializeField] private Material transparentMaterial;
     private bool isTransparent = false;
 
+    public void SetOpaqueMaterial(Material mat)
+    {
+        opaqueMaterial = mat;
+    }
+
+    public void SetTransparentMaterial(Material mat)
+    {
+        transparentMaterial = mat;
+    }
+
     public void SetTransparency()
     {
 
@@ -17,11 +27,13 @@ public class TransparencyToggle : MonoBehaviour
         {
             heart.transform.gameObject.GetComponent<MeshRenderer>().material = opaqueMaterial;
             isTransparent = false;
+            SliceConfiguratorManager.Instance.SetIsTransparent(false);
         }
         else
         {
             heart.transform.gameObject.GetComponent<MeshRenderer>().material = transparentMaterial;
             isTransparent = true;
+            SliceConfiguratorManager.Instance.SetIsTransparent(true);
         }
 
     }

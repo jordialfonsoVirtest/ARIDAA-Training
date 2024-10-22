@@ -16,10 +16,13 @@ public class LessonManager : MonoBehaviour
     public GameObject backButton;
     public GameObject continueButton;
 
-    public GameObject laa;
-    public GameObject ostium;
-    public GameObject landingZone;
-    public GameObject device;
+    public GameObject lessonContentList;
+    public GameObject previousLessonContent;
+
+    public GameObject circumflex;
+    public GameObject fossa;
+    public GameObject laaMeasurements;
+    public GameObject centrelineManager;
 
     public void NextLesson()
     {
@@ -37,6 +40,18 @@ public class LessonManager : MonoBehaviour
         int lessonListCount = lessonList.transform.childCount;
         currentLesson = lessonList.transform.GetChild(currentLessonNumber).gameObject;
         currentLesson.SetActive(true);
+        
+        if (!previousLessonContent)
+        {
+            previousLessonContent = lessonContentList.transform.GetChild(currentLessonNumber).gameObject;
+            lessonContentList.transform.GetChild(currentLessonNumber).gameObject.SetActive(true);
+        }
+        else
+        {
+            previousLessonContent.SetActive(false);
+            previousLessonContent = lessonContentList.transform.GetChild(currentLessonNumber).gameObject;
+            lessonContentList.transform.GetChild(currentLessonNumber).gameObject.SetActive(true);
+        }
 
         if (currentLessonNumber == 0 )
         {
@@ -55,38 +70,34 @@ public class LessonManager : MonoBehaviour
             continueButton.SetActive(true);
         }
 
-        if (currentLessonNumber == 1)
+        switch(currentLessonNumber)
         {
-            laa.SetActive(true);
-        }
-        else
-        {
-            laa.SetActive(false);
+            case 0:
+                circumflex.SetActive(true);
+                fossa.SetActive(true);
+                laaMeasurements.SetActive(false);
+                centrelineManager.SetActive(false);
+                break;
+
+            case 1:
+                laaMeasurements.SetActive(true);
+                centrelineManager.SetActive(true);
+                break;
+
+            case 2:
+                break;
+
+            case 3:
+                break;
+
+            case 4:
+                break;
+
+
+            default:
+                break;
         }
 
-        if (currentLessonNumber < 2)
-        {
-            ostium.SetActive(false);
-            landingZone.SetActive(false);
-            device.SetActive(false);
-        }
-        else if (currentLessonNumber == 2)
-        {
-            ostium.SetActive(true);
-            landingZone.SetActive(false);
-            device.SetActive(false);
-        }
-        else if (currentLessonNumber == 3)
-        {
-            ostium.SetActive(true);
-            landingZone.SetActive(true);
-            device.SetActive(false);
-        }else if (currentLessonNumber >= 4)
-        {
-            ostium.SetActive(true);
-            landingZone.SetActive(true);
-            device.SetActive(true);
-        }
     }
 
 

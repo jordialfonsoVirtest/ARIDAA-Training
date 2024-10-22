@@ -64,6 +64,7 @@ public class UIOnEnableLocation : MonoBehaviour
             
         }
         //this.transform.localRotation = new Quaternion(0, 0, 0, 0);
+        this.transform.localPosition = new Vector3(0, 0, 0);
         this.transform.position = new Vector3(xpos, ypos, zpos);
         //this.transform.localPosition = new Vector3(xpos, ypos, zpos);
         Debug.Log("xpos: " + xpos + " ypos: " + ypos + " zpos: " + zpos);

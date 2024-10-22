@@ -1,9 +1,9 @@
-Shader "Slices/Y_Upwards_Transparent" {
+Shader "Slices/Y_Downwards_Transparent" {
     Properties{
       _MainTex("Texture", 2D) = "white" {}
       _BumpMap("Bumpmap", 2D) = "bump" {}
-      _Offset("Extrusion Amount", Range(-193,-115)) = 0
-      _Transparency("Transparency", Range(0,2)) = 1
+      _Offset("Extrusion Amount", Range(-50,40)) = 0
+      _Transparency("Transparency", Range(0,2)) = 2
     }
         SubShader{
           Tags {"RenderType" = "Transparent" "IgnoreProjector" = "True"}

@@ -20,6 +20,9 @@ public class Slicer : MonoBehaviour
 
     private bool isTransparent = false;
 
+    public Material GetOpaqueMaterial() { return slicerMaterialOpaque; }
+    public Material GetTransparentMaterial() {  return slicerMaterialTransparent; }
+
     public void SetIsTransparent(bool isTransparent)
     {
         this.isTransparent = isTransparent;
