@@ -24,6 +24,8 @@ public class LessonManager : MonoBehaviour
     public GameObject laaMeasurements;
     public GameObject centrelineManager;
 
+    public GameObject watchmanFLX;
+    public GameObject amplatzerAMULET;
     public void NextLesson()
     {
         currentLessonNumber++;
@@ -82,17 +84,39 @@ public class LessonManager : MonoBehaviour
             case 1:
                 laaMeasurements.SetActive(true);
                 centrelineManager.SetActive(true);
+                watchmanFLX.SetActive(false);
+                amplatzerAMULET.SetActive(false);
                 break;
 
             case 2:
+                laaMeasurements.SetActive(true);
+                watchmanFLX.SetActive(false);
+                amplatzerAMULET.SetActive(false);
                 break;
 
             case 3:
+                laaMeasurements.SetActive(true);
+                watchmanFLX.SetActive(true);
+                amplatzerAMULET.SetActive(true);
                 break;
 
             case 4:
+                laaMeasurements.SetActive(true);
+                watchmanFLX.SetActive(true);
+                amplatzerAMULET.SetActive(true);
                 break;
 
+            case 5:
+                laaMeasurements.SetActive(true);
+                watchmanFLX.SetActive(true);
+                amplatzerAMULET.SetActive(true);
+                break;
+
+            case 6:
+                laaMeasurements.SetActive(true);
+                watchmanFLX.SetActive(true);
+                amplatzerAMULET.SetActive(true);
+                break;
 
             default:
                 break;
