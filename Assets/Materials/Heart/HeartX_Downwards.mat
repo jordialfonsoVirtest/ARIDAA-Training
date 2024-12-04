@@ -79,7 +79,7 @@ Material:
     - _MinOpacity: 0
     - _Mode: 0
     - _OcclusionStrength: 1
-    - _Offset: 220
+    - _Offset: 195
     - _Parallax: 0.02
     - _Size: 0.1
     - _SmoothnessTextureChannel: 0

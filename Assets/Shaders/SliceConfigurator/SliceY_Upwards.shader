@@ -1,8 +1,9 @@
-Shader "Slices/Y_Upwards" {
+Shader "Slices/Y_Downwards" {
     Properties{
+      _Color("Color", Color) = (1.0,1.0,1.0)
       _MainTex("Texture", 2D) = "white" {}
       _BumpMap("Bumpmap", 2D) = "bump" {}
-      _Offset("Extrusion Amount", Range(-150,-70)) = 0
+      _Offset("Extrusion Amount", Range(-35,35)) = 0
     }
         SubShader{
           Tags { "RenderType" = "Opaque" }

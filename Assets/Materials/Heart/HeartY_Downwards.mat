@@ -8,7 +8,7 @@ Material:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: HeartY_Downwards
-  m_Shader: {fileID: 4800000, guid: ff2df86daf36c5b4ab58089c48a9e559, type: 3}
+  m_Shader: {fileID: 4800000, guid: 438d0596286ad894ea0db683b4f2bb36, type: 3}
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
   m_ValidKeywords: []
@@ -75,7 +75,7 @@ Material:
     - _Metallic: 0
     - _Mode: 0
     - _OcclusionStrength: 1
-    - _Offset: 40
+    - _Offset: 135
     - _Parallax: 0.02
     - _Size: 0.1
     - _SmoothnessTextureChannel: 0

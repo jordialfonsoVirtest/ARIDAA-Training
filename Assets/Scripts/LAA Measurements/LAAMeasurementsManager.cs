@@ -173,9 +173,11 @@ public class LAAMeasurementsManager : MonoBehaviour
 
     [SerializeField] public GameObject PointValues;
     [SerializeField] public GameObject RecommendedSizeWatchmanFLX;
+    public float recommendedSizeValueWatchmanFLX = 0;
     private float[,] sizeRangesWatchmanFLX = { { 14f, 18f }, { 16.8f, 21.6f }, { 18.9f, 24.3f }, { 21.7f, 27.9f }, { 24.5f, 31.5f } };
     private float[] sizesWatchmanFLX = { 20, 24, 27, 31, 35 };
     [SerializeField] public GameObject RecommendedSizeAmplatzerAMULET;
+    public float recommendedSizeValueAmplatzerAMULET = 0;
     private float[,] sizeRangesAmplatzerAMULET = { { 11f, 13f }, { 13f, 15f }, { 15f, 17f }, { 17f, 19f }, { 19f, 22f }, { 22f, 25f }, { 25f, 28f }, { 28f, 31f } };
     private float[] sizesAmplatzerAMULET = {16, 18, 20, 22, 25, 28, 31, 34};
 
@@ -407,6 +409,8 @@ public class LAAMeasurementsManager : MonoBehaviour
                 }
 
                 RecommendedSizeWatchmanFLX.GetComponent<TMP_Text>().text = sizesWatchmanFLX[bestIndex].ToString();
+                recommendedSizeValueWatchmanFLX = sizesWatchmanFLX[bestIndex];
+                LAAColliderManager.Instance.SetContourWarning(false);
             }
 
 
@@ -417,19 +421,26 @@ public class LAAMeasurementsManager : MonoBehaviour
                     if (currentContourDMean >= sizeRangesAmplatzerAMULET[i, 0] && currentContourDMean < sizeRangesAmplatzerAMULET[i, 1])
                     {
                         RecommendedSizeAmplatzerAMULET.GetComponent<TMP_Text>().text = sizesAmplatzerAMULET[i].ToString();
+                        recommendedSizeValueAmplatzerAMULET = sizesAmplatzerAMULET[i];
+                        LAAColliderManager.Instance.SetContourWarning(false);
                     }
                 }
             }
             else
             {
                 RecommendedSizeAmplatzerAMULET.GetComponent<TMP_Text>().text = sizesAmplatzerAMULET[7].ToString();
+                recommendedSizeValueAmplatzerAMULET = sizesAmplatzerAMULET[7];
+                LAAColliderManager.Instance.SetContourWarning(false);
             }
             
         }
         else
         {
             RecommendedSizeAmplatzerAMULET.GetComponent<TMP_Text>().text = "0";
+            recommendedSizeValueAmplatzerAMULET = 0;
             RecommendedSizeWatchmanFLX.GetComponent<TMP_Text>().text = "0";
+            recommendedSizeValueWatchmanFLX = 0;
+            LAAColliderManager.Instance.SetContourWarning(true);
         }
     }
     public void GenerateCentrelineMeasuresData(){
@@ -506,8 +517,8 @@ public class LAAMeasurementsManager : MonoBehaviour
             buttonActive.GetComponent<PointButton>().SetContourRender(contourRenderer);
 
             RenderMeasurementsGraph();
-
             
+            //button.GetComponent<PointButton>().ButtonPress();
         }
     }
 

@@ -80,8 +80,6 @@ public class MeasurementsGraph : MonoBehaviour
         List<float> maxValues = new List<float>();
         List<float> minValues = new List<float>();
 
-        Debug.Log(D2Values.Min());
-
         maxValues.Add(D1Values.Max());
         maxValues.Add(D2Values.Max());
         maxValues.Add(DMeanValues.Max());

@@ -2,7 +2,7 @@ Shader "Slices/X_Downwards_Transparent" {
     Properties{
       _MainTex("Texture", 2D) = "white" {}
       _BumpMap("Bumpmap", 2D) = "bump" {}
-      _Offset("Extrusion Amount", Range(97,220)) = 0
+      _Offset("Extrusion Amount", Range(97,195)) = 0
       _Transparency("Transparency", Range(0,2)) = 1
     }
         SubShader{

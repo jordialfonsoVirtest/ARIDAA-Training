@@ -153,6 +153,8 @@ public class PointButton : MonoBehaviour
 
         }
 
+        DeviceSelectorManager.Instance.InactiveAllCompressionCases();
+
     }
     // Start is called before the first frame update
     void Start()

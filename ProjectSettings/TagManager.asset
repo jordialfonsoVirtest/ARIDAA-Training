@@ -7,6 +7,22 @@ TagManager:
   - Button
   - SamplesInfoPanel
   - SeparatorLine
+  - QDSUISection
+  - QDSUIIcon
+  - QDSUISharedThemeColor
+  - QDSUIToggleButton
+  - QDSUISecondaryButton
+  - QDSUIToggleCheckboxRadio
+  - QDSUIAccentColor
+  - QDSUITextSecondaryColor
+  - QDSUITextInputField
+  - QDSUITooltip
+  - QDSUIToggleSwitch
+  - QDSUIPrimaryButton
+  - QDSUIBorderlessButton
+  - QDSUIToggleBorderlessButton
+  - QDSUIDestructiveButton
+  - AMULET
   layers:
   - Default
   - TransparentFX

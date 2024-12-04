@@ -26,6 +26,69 @@ public class LessonManager : MonoBehaviour
 
     public GameObject watchmanFLX;
     public GameObject amplatzerAMULET;
+
+    public GameObject deviceSelector;
+    public GameObject compressionCases;
+
+    public GameObject contourWarning;
+
+    public bool ContourWarningCheck()
+    {
+        if(LAAMeasurementsManager.Instance.recommendedSizeValueAmplatzerAMULET != 0)
+        {
+            return false;
+        }
+        else
+        {
+            return true;
+        }
+    }
+
+    public bool DeviceCheck()
+    {
+        if (LAAColliderManager.Instance.currentDeviceDisk && LAAColliderManager.Instance.currentDeviceLobe)
+        {
+            return true;
+        }
+        else
+        {
+            return false;
+        }
+    }
+
+    public bool TimelapseCheck()
+    {
+        if (LAAColliderManager.Instance.previousTimelapseCase)
+        {
+            return true;
+        }
+        else
+        {
+            return false;
+        }
+    }
+
+    public void SetDeviceVisibility(bool state)
+    {
+        LAAColliderManager.Instance.currentDeviceDisk.SetActive(state);
+        LAAColliderManager.Instance.currentDeviceLobe.SetActive(state);
+    }
+
+    public void UpdateDeviceState(bool state)
+    {
+        if (DeviceCheck())
+        {
+            SetDeviceVisibility(state);
+        }
+    }
+
+    public void UpdateTimelapseState(bool state)
+    {
+        if (TimelapseCheck())
+        {
+            LAAColliderManager.Instance.previousTimelapseCase.SetActive(state);
+        }
+    }
     public void NextLesson()
     {
         currentLessonNumber++;
@@ -79,6 +142,11 @@ public class LessonManager : MonoBehaviour
                 fossa.SetActive(true);
                 laaMeasurements.SetActive(false);
                 centrelineManager.SetActive(false);
+                deviceSelector.SetActive(false);
+                contourWarning.SetActive(false);
+                UpdateDeviceState(false);
+                UpdateTimelapseState(false);
+                compressionCases.GetComponent<SetAllInactive>().SetAllGameObjectsInactive();
                 break;
 
             case 1:
@@ -86,36 +154,87 @@ public class LessonManager : MonoBehaviour
                 centrelineManager.SetActive(true);
                 watchmanFLX.SetActive(false);
                 amplatzerAMULET.SetActive(false);
+                deviceSelector.SetActive(false);
+                contourWarning.SetActive(false);
+                UpdateDeviceState(false);
+                UpdateTimelapseState(false);
+                compressionCases.GetComponent<SetAllInactive>().SetAllGameObjectsInactive();
                 break;
 
             case 2:
                 laaMeasurements.SetActive(true);
                 watchmanFLX.SetActive(false);
                 amplatzerAMULET.SetActive(false);
+                deviceSelector.SetActive(false);
+                contourWarning.SetActive(false);
+                UpdateDeviceState(false);
+                UpdateTimelapseState(false);
+                compressionCases.GetComponent<SetAllInactive>().SetAllGameObjectsInactive();
                 break;
 
             case 3:
                 laaMeasurements.SetActive(true);
                 watchmanFLX.SetActive(true);
                 amplatzerAMULET.SetActive(true);
+                deviceSelector.SetActive(false);
+                contourWarning.SetActive(false);
+                UpdateDeviceState(false);
+                UpdateTimelapseState(false);
+                compressionCases.GetComponent<SetAllInactive>().SetAllGameObjectsInactive();
                 break;
 
             case 4:
                 laaMeasurements.SetActive(true);
                 watchmanFLX.SetActive(true);
                 amplatzerAMULET.SetActive(true);
+                deviceSelector.SetActive(false);
+                contourWarning.SetActive(false);
+                UpdateDeviceState(false);
+                UpdateTimelapseState(false);
+                compressionCases.GetComponent<SetAllInactive>().SetAllGameObjectsInactive();
                 break;
 
             case 5:
                 laaMeasurements.SetActive(true);
                 watchmanFLX.SetActive(true);
                 amplatzerAMULET.SetActive(true);
+                deviceSelector.SetActive(false);
+                contourWarning.SetActive(false);
+                UpdateDeviceState(false);
+                UpdateTimelapseState(false);
+                compressionCases.GetComponent<SetAllInactive>().SetAllGameObjectsInactive();
                 break;
 
             case 6:
                 laaMeasurements.SetActive(true);
                 watchmanFLX.SetActive(true);
                 amplatzerAMULET.SetActive(true);
+                deviceSelector.SetActive(true);
+                contourWarning.SetActive(ContourWarningCheck());
+                UpdateDeviceState(false);
+                UpdateTimelapseState(false);
+                DeviceSelectorManager.Instance.isCompressionLesson = true;
+                break;
+            case 7:
+                laaMeasurements.SetActive(true);
+                watchmanFLX.SetActive(true);
+                amplatzerAMULET.SetActive(true);
+                deviceSelector.SetActive(true);
+                contourWarning.SetActive(ContourWarningCheck());
+                UpdateDeviceState(true);
+                UpdateTimelapseState(true);
+                DeviceSelectorManager.Instance.isCompressionLesson = false;
+                compressionCases.GetComponent<SetAllInactive>().SetAllGameObjectsInactive();
+                break;
+            case 8:
+                laaMeasurements.SetActive(false);
+                watchmanFLX.SetActive(false);
+                amplatzerAMULET.SetActive(false);
+                deviceSelector.SetActive(false);
+                contourWarning.SetActive(false);
+                UpdateDeviceState(false);
+                UpdateTimelapseState(false);
+                compressionCases.GetComponent<SetAllInactive>().SetAllGameObjectsInactive();
                 break;
 
             default:
