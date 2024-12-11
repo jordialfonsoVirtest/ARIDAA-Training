@@ -36,5 +36,5 @@ Shader "Slices/X_Downwards_Transparent" {
           }
           ENDCG
     }
-        Fallback "Diffuse"
+        //Fallback "Diffuse"
 }

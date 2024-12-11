@@ -6,7 +6,7 @@ Shader "Slices/X_Downwards" {
     }
         SubShader{
           Tags { "RenderType" = "Transparent" }
-          Cull Off
+        
           CGPROGRAM
           #pragma surface surf Lambert vertex:vert
           struct Input {

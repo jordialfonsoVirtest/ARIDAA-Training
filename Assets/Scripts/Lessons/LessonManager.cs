@@ -29,6 +29,7 @@ public class LessonManager : MonoBehaviour
 
     public GameObject deviceSelector;
     public GameObject compressionCases;
+    public GameObject compressionCasesUI;
 
     public GameObject contourWarning;
 
@@ -147,6 +148,7 @@ public class LessonManager : MonoBehaviour
                 UpdateDeviceState(false);
                 UpdateTimelapseState(false);
                 compressionCases.GetComponent<SetAllInactive>().SetAllGameObjectsInactive();
+                compressionCasesUI.GetComponent<SetAllInactive>().SetAllGameObjectsInactive();
                 break;
 
             case 1:
@@ -159,6 +161,7 @@ public class LessonManager : MonoBehaviour
                 UpdateDeviceState(false);
                 UpdateTimelapseState(false);
                 compressionCases.GetComponent<SetAllInactive>().SetAllGameObjectsInactive();
+                compressionCasesUI.GetComponent<SetAllInactive>().SetAllGameObjectsInactive();
                 break;
 
             case 2:
@@ -170,6 +173,7 @@ public class LessonManager : MonoBehaviour
                 UpdateDeviceState(false);
                 UpdateTimelapseState(false);
                 compressionCases.GetComponent<SetAllInactive>().SetAllGameObjectsInactive();
+                compressionCasesUI.GetComponent<SetAllInactive>().SetAllGameObjectsInactive();
                 break;
 
             case 3:
@@ -181,6 +185,7 @@ public class LessonManager : MonoBehaviour
                 UpdateDeviceState(false);
                 UpdateTimelapseState(false);
                 compressionCases.GetComponent<SetAllInactive>().SetAllGameObjectsInactive();
+                compressionCasesUI.GetComponent<SetAllInactive>().SetAllGameObjectsInactive();
                 break;
 
             case 4:
@@ -192,6 +197,7 @@ public class LessonManager : MonoBehaviour
                 UpdateDeviceState(false);
                 UpdateTimelapseState(false);
                 compressionCases.GetComponent<SetAllInactive>().SetAllGameObjectsInactive();
+                compressionCasesUI.GetComponent<SetAllInactive>().SetAllGameObjectsInactive();
                 break;
 
             case 5:
@@ -203,6 +209,7 @@ public class LessonManager : MonoBehaviour
                 UpdateDeviceState(false);
                 UpdateTimelapseState(false);
                 compressionCases.GetComponent<SetAllInactive>().SetAllGameObjectsInactive();
+                compressionCasesUI.GetComponent<SetAllInactive>().SetAllGameObjectsInactive();
                 break;
 
             case 6:
@@ -225,6 +232,7 @@ public class LessonManager : MonoBehaviour
                 UpdateTimelapseState(true);
                 DeviceSelectorManager.Instance.isCompressionLesson = false;
                 compressionCases.GetComponent<SetAllInactive>().SetAllGameObjectsInactive();
+                compressionCasesUI.GetComponent<SetAllInactive>().SetAllGameObjectsInactive();
                 break;
             case 8:
                 laaMeasurements.SetActive(false);
@@ -235,6 +243,7 @@ public class LessonManager : MonoBehaviour
                 UpdateDeviceState(false);
                 UpdateTimelapseState(false);
                 compressionCases.GetComponent<SetAllInactive>().SetAllGameObjectsInactive();
+                compressionCasesUI.GetComponent<SetAllInactive>().SetAllGameObjectsInactive();
                 break;
 
             default:

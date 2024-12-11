@@ -15,6 +15,7 @@ public class DeviceSelectorManager : MonoBehaviour
 
     public GameObject contourWarning;
     public GameObject compressionCases;
+    public GameObject compressionCasesUI;
 
     public GameObject buttonList;
     public int buttonListSize = 0;
@@ -234,16 +235,21 @@ public class DeviceSelectorManager : MonoBehaviour
             {
 
                 compressionCases.transform.GetChild(0).gameObject.SetActive(true);
+                compressionCasesUI.transform.GetChild(0).gameObject.SetActive(true);
 
-            }else if (currentDeviceSize < currentRecommendedSize)
+            }
+            else if (currentDeviceSize < currentRecommendedSize)
             {
 
                 compressionCases.transform.GetChild(1).gameObject.SetActive(true);
+                compressionCasesUI.transform.GetChild(1).gameObject.SetActive(true);
 
-            }else if(currentDeviceSize > currentRecommendedSize)
+            }
+            else if(currentDeviceSize > currentRecommendedSize)
             {
 
                 compressionCases.transform.GetChild(2).gameObject.SetActive(true);
+                compressionCasesUI.transform.GetChild(2).gameObject.SetActive(true);
 
             }
 
@@ -257,6 +263,7 @@ public class DeviceSelectorManager : MonoBehaviour
     public void InactiveAllCompressionCases()
     {
         compressionCases.GetComponent<SetAllInactive>().SetAllGameObjectsInactive();
+        compressionCasesUI.GetComponent<SetAllInactive>().SetAllGameObjectsInactive();
     }
 
     // Update is called once per frame
