@@ -166,6 +166,7 @@ public class LessonManager : MonoBehaviour
 
             case 2:
                 laaMeasurements.SetActive(true);
+                centrelineManager.SetActive(true);
                 watchmanFLX.SetActive(false);
                 amplatzerAMULET.SetActive(false);
                 deviceSelector.SetActive(false);
@@ -178,6 +179,7 @@ public class LessonManager : MonoBehaviour
 
             case 3:
                 laaMeasurements.SetActive(true);
+                centrelineManager.SetActive(true);
                 watchmanFLX.SetActive(true);
                 amplatzerAMULET.SetActive(true);
                 deviceSelector.SetActive(false);
@@ -190,6 +192,7 @@ public class LessonManager : MonoBehaviour
 
             case 4:
                 laaMeasurements.SetActive(true);
+                centrelineManager.SetActive(true);
                 watchmanFLX.SetActive(true);
                 amplatzerAMULET.SetActive(true);
                 deviceSelector.SetActive(false);
@@ -202,6 +205,7 @@ public class LessonManager : MonoBehaviour
 
             case 5:
                 laaMeasurements.SetActive(true);
+                centrelineManager.SetActive(true);
                 watchmanFLX.SetActive(true);
                 amplatzerAMULET.SetActive(true);
                 deviceSelector.SetActive(false);
@@ -214,6 +218,7 @@ public class LessonManager : MonoBehaviour
 
             case 6:
                 laaMeasurements.SetActive(true);
+                centrelineManager.SetActive(true);
                 watchmanFLX.SetActive(true);
                 amplatzerAMULET.SetActive(true);
                 deviceSelector.SetActive(true);
@@ -224,6 +229,7 @@ public class LessonManager : MonoBehaviour
                 break;
             case 7:
                 laaMeasurements.SetActive(true);
+                centrelineManager.SetActive(true);
                 watchmanFLX.SetActive(true);
                 amplatzerAMULET.SetActive(true);
                 deviceSelector.SetActive(true);
@@ -236,6 +242,7 @@ public class LessonManager : MonoBehaviour
                 break;
             case 8:
                 laaMeasurements.SetActive(false);
+                centrelineManager.SetActive(false);
                 watchmanFLX.SetActive(false);
                 amplatzerAMULET.SetActive(false);
                 deviceSelector.SetActive(false);
