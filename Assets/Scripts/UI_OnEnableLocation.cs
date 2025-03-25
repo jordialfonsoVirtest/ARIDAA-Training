@@ -5,23 +5,65 @@ using UnityEngine;
 public class UIOnEnableLocation : MonoBehaviour
 {
     [SerializeField] private GameObject target;
+    [SerializeField] private GameObject heartPivot;
+    [SerializeField] private GameObject heartMesh;
+
+    [SerializeField] public bool isSet = false;
 
     [SerializeField] private float distance = 0.25f;
     // Start is called before the first frame update
     void Start()
     {
-        
+        this.transform.position = target.transform.position;
+        heartPivot.transform.position = target.transform.position;
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+        this.transform.position = target.transform.position;
+        heartPivot.transform.position = target.transform.position;
+        if (heartMesh != null)
+        {
+
+            heartMesh.transform.localPosition = new Vector3(0.0f, 0.0f, 0.0f);
+            Debug.Log("a");
+
+        }
+    }
+
+    public void SetLocation()
+    {
+        if (!isSet)
+        {
+            this.transform.position = target.transform.position;
+            heartPivot.transform.position = target.transform.position;
+            if (heartMesh != null) {
+                
+                heartMesh.transform.localPosition = new Vector3(0.0f, 0.0f, 0.0f);
+
+            }
+            this.transform.rotation = new Quaternion(0.0f, 0.0f, 0.0f, 0.0f);
+            isSet = true;
+        }
+
+    }
+
+    IEnumerator Wait(int seconds)
+    {
+        //yield on a new YieldInstruction that waits for 5 seconds.
+        yield return new WaitForSeconds(seconds);
+    }
+
+    public void Delay()
+    {
+        StartCoroutine(Wait(5));
+        enabled = false;
     }
 
     void OnEnable()
     {
-        float xpos = 0;
+        /*float xpos = 0;
         float ypos = 0;
         float zpos = 0;
 
@@ -70,5 +112,11 @@ public class UIOnEnableLocation : MonoBehaviour
         Debug.Log("xpos: " + xpos + " ypos: " + ypos + " zpos: " + zpos);
         
         transform.rotation = Quaternion.LookRotation(transform.position - target.transform.position);
+
+        this.transform.GetChild(0).GetComponent<ResetPosition>().ResetPositionObject();*/
+
+        //this.transform.SetParent(null);
+
+
     }
 }

@@ -22,6 +22,7 @@ public class LessonManager : MonoBehaviour
     public GameObject circumflex;
     public GameObject fossa;
     public GameObject laaMeasurements;
+    public GameObject laaMeasurementsGrabbable;
     public GameObject centrelineManager;
 
     public GameObject watchmanFLX;
@@ -141,7 +142,7 @@ public class LessonManager : MonoBehaviour
             case 0:
                 circumflex.SetActive(true);
                 fossa.SetActive(true);
-                laaMeasurements.SetActive(false);
+                laaMeasurements.SetActive(false);                
                 centrelineManager.SetActive(false);
                 deviceSelector.SetActive(false);
                 contourWarning.SetActive(false);
@@ -149,6 +150,8 @@ public class LessonManager : MonoBehaviour
                 UpdateTimelapseState(false);
                 compressionCases.GetComponent<SetAllInactive>().SetAllGameObjectsInactive();
                 compressionCasesUI.GetComponent<SetAllInactive>().SetAllGameObjectsInactive();
+                laaMeasurementsGrabbable.GetComponent<UIOnEnableLocation>().enabled = true;
+                laaMeasurementsGrabbable.GetComponent<UIOnEnableLocation>().isSet = false;
                 break;
 
             case 1:
@@ -161,7 +164,9 @@ public class LessonManager : MonoBehaviour
                 UpdateDeviceState(false);
                 UpdateTimelapseState(false);
                 compressionCases.GetComponent<SetAllInactive>().SetAllGameObjectsInactive();
-                compressionCasesUI.GetComponent<SetAllInactive>().SetAllGameObjectsInactive();
+                compressionCasesUI.GetComponent<SetAllInactive>().SetAllGameObjectsInactive();                
+                laaMeasurementsGrabbable.GetComponent<UIOnEnableLocation>().SetLocation();
+                laaMeasurementsGrabbable.GetComponent<UIOnEnableLocation>().enabled = false;
                 break;
 
             case 2:
@@ -174,7 +179,9 @@ public class LessonManager : MonoBehaviour
                 UpdateDeviceState(false);
                 UpdateTimelapseState(false);
                 compressionCases.GetComponent<SetAllInactive>().SetAllGameObjectsInactive();
-                compressionCasesUI.GetComponent<SetAllInactive>().SetAllGameObjectsInactive();
+                compressionCasesUI.GetComponent<SetAllInactive>().SetAllGameObjectsInactive();                
+                laaMeasurementsGrabbable.GetComponent<UIOnEnableLocation>().SetLocation();
+                laaMeasurementsGrabbable.GetComponent<UIOnEnableLocation>().enabled = false;
                 break;
 
             case 3:
@@ -187,7 +194,9 @@ public class LessonManager : MonoBehaviour
                 UpdateDeviceState(false);
                 UpdateTimelapseState(false);
                 compressionCases.GetComponent<SetAllInactive>().SetAllGameObjectsInactive();
-                compressionCasesUI.GetComponent<SetAllInactive>().SetAllGameObjectsInactive();
+                compressionCasesUI.GetComponent<SetAllInactive>().SetAllGameObjectsInactive();                
+                laaMeasurementsGrabbable.GetComponent<UIOnEnableLocation>().SetLocation();
+                laaMeasurementsGrabbable.GetComponent<UIOnEnableLocation>().enabled = false;
                 break;
 
             case 4:
@@ -200,7 +209,9 @@ public class LessonManager : MonoBehaviour
                 UpdateDeviceState(false);
                 UpdateTimelapseState(false);
                 compressionCases.GetComponent<SetAllInactive>().SetAllGameObjectsInactive();
-                compressionCasesUI.GetComponent<SetAllInactive>().SetAllGameObjectsInactive();
+                compressionCasesUI.GetComponent<SetAllInactive>().SetAllGameObjectsInactive();               
+                laaMeasurementsGrabbable.GetComponent<UIOnEnableLocation>().SetLocation();
+                laaMeasurementsGrabbable.GetComponent<UIOnEnableLocation>().enabled = false;
                 break;
 
             case 5:
@@ -214,6 +225,8 @@ public class LessonManager : MonoBehaviour
                 UpdateTimelapseState(false);
                 compressionCases.GetComponent<SetAllInactive>().SetAllGameObjectsInactive();
                 compressionCasesUI.GetComponent<SetAllInactive>().SetAllGameObjectsInactive();
+                laaMeasurementsGrabbable.GetComponent<UIOnEnableLocation>().SetLocation();
+                laaMeasurementsGrabbable.GetComponent<UIOnEnableLocation>().enabled = false;
                 break;
 
             case 6:
@@ -225,7 +238,9 @@ public class LessonManager : MonoBehaviour
                 contourWarning.SetActive(ContourWarningCheck());
                 UpdateDeviceState(false);
                 UpdateTimelapseState(false);
-                DeviceSelectorManager.Instance.isCompressionLesson = true;
+                DeviceSelectorManager.Instance.isCompressionLesson = true; 
+                laaMeasurementsGrabbable.GetComponent<UIOnEnableLocation>().SetLocation();
+                laaMeasurementsGrabbable.GetComponent<UIOnEnableLocation>().enabled = false;
                 break;
             case 7:
                 laaMeasurements.SetActive(true);
@@ -239,6 +254,8 @@ public class LessonManager : MonoBehaviour
                 DeviceSelectorManager.Instance.isCompressionLesson = false;
                 compressionCases.GetComponent<SetAllInactive>().SetAllGameObjectsInactive();
                 compressionCasesUI.GetComponent<SetAllInactive>().SetAllGameObjectsInactive();
+                laaMeasurementsGrabbable.GetComponent<UIOnEnableLocation>().SetLocation();
+                laaMeasurementsGrabbable.GetComponent<UIOnEnableLocation>().enabled = false;
                 break;
             case 8:
                 laaMeasurements.SetActive(false);
@@ -251,6 +268,8 @@ public class LessonManager : MonoBehaviour
                 UpdateTimelapseState(false);
                 compressionCases.GetComponent<SetAllInactive>().SetAllGameObjectsInactive();
                 compressionCasesUI.GetComponent<SetAllInactive>().SetAllGameObjectsInactive();
+                laaMeasurementsGrabbable.GetComponent<UIOnEnableLocation>().SetLocation();
+                laaMeasurementsGrabbable.GetComponent<UIOnEnableLocation>().enabled = false;
                 break;
 
             default:

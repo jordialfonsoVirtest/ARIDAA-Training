@@ -9,6 +9,10 @@ public class StartHeartApplication : MonoBehaviour
     [SerializeField] private GameObject centrelineManager;
     [SerializeField] private GameObject laaMeasurements;
 
+    [SerializeField] private GameObject HMD;
+    [SerializeField] private GameObject heart;
+    [SerializeField] private GameObject initialHeartPosition;
+
     private bool isExecuted = false;
     void Start()
     {
@@ -23,8 +27,14 @@ public class StartHeartApplication : MonoBehaviour
             StartCoroutine(Wait(1));
             centrelineManager.SetActive(false);
             laaMeasurements.SetActive(false);
-            heartPivot.SetActive(false);
-            heartPivot.GetComponent<UIOnEnableLocation>().enabled = true;
+            //heartPivot.GetComponent<UIOnEnableLocation>().enabled = true;
+            //heartPivot.SetActive(false);
+
+            //heart.transform.SetParent(HMD.transform);
+            //heart.transform.localPosition = initialHeartPosition.transform.localPosition;
+            heart.GetComponent<UIOnEnableLocation>().enabled = true;
+            heart.SetActive(false);
+
             isExecuted = true;
         }
     }

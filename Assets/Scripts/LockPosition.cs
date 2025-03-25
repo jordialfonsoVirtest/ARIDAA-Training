@@ -10,6 +10,7 @@ public class LockPosition : MonoBehaviour
     [SerializeField] private GameObject rotatedObject;
 
     private bool isLocked = false;
+    private bool isOn = false;
 
     public void SetButtonColor(Color color)
     {
@@ -20,14 +21,16 @@ public class LockPosition : MonoBehaviour
 
     public void UpdateColor()
     {
-        if (isLocked)
+        if (isOn)
         {
-            SetButtonColor(new Color(0, 100, 255));
+            SetButtonColor(new Color(0.78f, 0.78f, 0.78f, 0.2f));
         }
         else
         {
-            SetButtonColor(new Color(0, 200, 255, 0.2f));
+            SetButtonColor(new Color(0, 0.58f, 1.0f, 0.7f));
         }
+
+        isOn = !isOn;
     }
     public void LockObjectPosition()
     {
