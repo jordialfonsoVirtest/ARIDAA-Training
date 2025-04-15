@@ -16,6 +16,8 @@ public class LAAColliderManager : MonoBehaviour
     public GameObject Disks;
     public GameObject Lobes;
 
+    public GameObject timelapsePosition;
+
     private static LAAColliderManager _instance;
     public static LAAColliderManager Instance
     {
@@ -81,11 +83,11 @@ public class LAAColliderManager : MonoBehaviour
             previousTimelapseCase.SetActive(false);
             timelapseList.transform.GetChild(caseTimelapse).gameObject.SetActive(true);
             previousTimelapseCase = timelapseList.transform.GetChild(caseTimelapse).gameObject;
-            Debug.Log("MEC");
         }
 
         if (!previousTimelapseCase)
         {
+            timelapseList.transform.position = timelapsePosition.transform.position;
             timelapseList.transform.GetChild(caseTimelapse).gameObject.SetActive(true);
             previousTimelapseCase = timelapseList.transform.GetChild(caseTimelapse).gameObject;
         }

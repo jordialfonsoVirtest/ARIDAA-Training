@@ -54,7 +54,7 @@ public class Timelapse : MonoBehaviour
         if(timelapseDistance < timelapseSteps)
         {
             timelapse3DModels.transform.GetChild(timelapseDistance).gameObject.SetActive(true);
-            timelapse3DModels.transform.GetChild(timelapseDistance + (timelapseSteps * 1)).gameObject.SetActive(true);
+            //timelapse3DModels.transform.GetChild(timelapseDistance + (timelapseSteps * 1)).gameObject.SetActive(true);
             timelapse3DModels.transform.GetChild(timelapseDistance + (timelapseSteps * 2)).gameObject.SetActive(true);
             timelapse3DModels.transform.GetChild(timelapseDistance + (timelapseSteps * 3)).gameObject.SetActive(true);
             textSlider.GetComponent<TMP_Text>().text = (timelapseDistance).ToString();
@@ -62,7 +62,7 @@ public class Timelapse : MonoBehaviour
         else
         {
             timelapse3DModels.transform.GetChild(timelapseSteps-1).gameObject.SetActive(true);
-            timelapse3DModels.transform.GetChild(timelapseSteps-1 + (timelapseSteps * 1)).gameObject.SetActive(true);
+            //timelapse3DModels.transform.GetChild(timelapseSteps-1 + (timelapseSteps * 1)).gameObject.SetActive(true);
             timelapse3DModels.transform.GetChild(timelapseSteps-1 + (timelapseSteps * 2)).gameObject.SetActive(true);
             timelapse3DModels.transform.GetChild(timelapseSteps-1 + (timelapseSteps * 3)).gameObject.SetActive(true);
             textSlider.GetComponent<TMP_Text>().text = (timelapseSteps-1).ToString();

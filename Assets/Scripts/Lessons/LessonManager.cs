@@ -247,11 +247,11 @@ public class LessonManager : MonoBehaviour
                 centrelineManager.SetActive(true);
                 watchmanFLX.SetActive(true);
                 amplatzerAMULET.SetActive(true);
-                deviceSelector.SetActive(true);
                 contourWarning.SetActive(ContourWarningCheck());
                 UpdateDeviceState(true);
                 UpdateTimelapseState(true);
                 DeviceSelectorManager.Instance.isCompressionLesson = false;
+                deviceSelector.SetActive(false);
                 compressionCases.GetComponent<SetAllInactive>().SetAllGameObjectsInactive();
                 compressionCasesUI.GetComponent<SetAllInactive>().SetAllGameObjectsInactive();
                 laaMeasurementsGrabbable.GetComponent<UIOnEnableLocation>().SetLocation();
