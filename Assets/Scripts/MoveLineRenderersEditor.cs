@@ -125,7 +125,7 @@ using UnityEditor; // Required for AssetDatabase
 [RequireComponent(typeof(MeshRenderer))]
 public class MoveLineRenderersEditor : MonoBehaviour
 {
-    public bool applyOriginalTransforms = true; // Should the combined lines respect the original child transforms?
+    /*public bool applyOriginalTransforms = true; // Should the combined lines respect the original child transforms?
     public string assetName = "CombinedLinesMesh"; // Name for the generated mesh asset
 
     [ContextMenu("Combine Child LineRenderers")]
@@ -240,5 +240,5 @@ public class MoveLineRenderersEditor : MonoBehaviour
     public void Start()
     {
         CombineLineRenderers();
-    }
+    }*/
 }
