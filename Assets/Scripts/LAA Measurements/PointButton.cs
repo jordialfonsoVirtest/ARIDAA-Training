@@ -52,10 +52,10 @@ public class PointButton : MonoBehaviour
         GameObject point = Instantiate(PointStoredPrefab);
         point.transform.SetParent(LAAMeasurementsManager.Instance.PointSlider.transform);
         point.GetComponent<PointStored>().SetPointTexts(name,
-                                                        (Mathf.Round(contour.measurements.D1 * 100.0f) * 0.01f).ToString(),
-                                                        (Mathf.Round(contour.measurements.Dmean * 100.0f) * 0.01f).ToString(),
-                                                        (Mathf.Round(contour.measurements.D2 * 100.0f) * 0.01f).ToString(),
-                                                        (Mathf.Round(contour.measurements.PDMD * 100.0f) * 0.01f).ToString(),
+                                                        (Mathf.Round(contour.measurements.D1 * 100.0f) * 0.1f).ToString(),
+                                                        (Mathf.Round(contour.measurements.Dmean * 100.0f) * 0.1f).ToString(),
+                                                        (Mathf.Round(contour.measurements.D2 * 100.0f) * 0.1f).ToString(),
+                                                        (Mathf.Round(contour.measurements.PDMD * 100.0f) * 0.1f).ToString(),
                                                         "0",
                                                         "0");
         point.GetComponent<RectTransform>().localScale = new Vector3(1.0f, 1.0f, 1.0f);

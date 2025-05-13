@@ -1,3 +1,4 @@
+using Meta.XR.ImmersiveDebugger.UserInterface;
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
@@ -15,11 +16,11 @@ public class PointStored : MonoBehaviour
 
     public void SetPointTexts(string Point, string D1, string DMean, string D2, string PDMD, string Device1, string Device2)
     {
-        this.Point.text = Point;
-        this.D1.text = D1;
-        this.DMean.text = DMean;
-        this.D2.text = D2;
-        this.PDMD.text = PDMD;
+        this.Point.text = Point.Substring(0, Point.Length - 1);
+        this.D1.text = D1.Substring(0, D1.Length - 1);
+        this.DMean.text = DMean.Substring(0, DMean.Length - 1);
+        this.D2.text = D2.Substring(0, D2.Length - 1);
+        this.PDMD.text = PDMD.Substring(0, PDMD.Length - 1);
     }
 
     // Start is called before the first frame update
