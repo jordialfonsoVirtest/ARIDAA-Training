@@ -168,25 +168,9 @@ public class LessonManager : MonoBehaviour
                 laaMeasurementsGrabbable.GetComponent<UIOnEnableLocation>().SetLocation();
                 laaMeasurementsGrabbable.GetComponent<UIOnEnableLocation>().enabled = false;
                 break;
-
             case 2:
                 laaMeasurements.SetActive(true);
                 centrelineManager.SetActive(true);
-                watchmanFLX.SetActive(false);
-                amplatzerAMULET.SetActive(false);
-                deviceSelector.SetActive(false);
-                contourWarning.SetActive(false);
-                UpdateDeviceState(false);
-                UpdateTimelapseState(false);
-                compressionCases.GetComponent<SetAllInactive>().SetAllGameObjectsInactive();
-                compressionCasesUI.GetComponent<SetAllInactive>().SetAllGameObjectsInactive();                
-                laaMeasurementsGrabbable.GetComponent<UIOnEnableLocation>().SetLocation();
-                laaMeasurementsGrabbable.GetComponent<UIOnEnableLocation>().enabled = false;
-                break;
-
-            case 3:
-                laaMeasurements.SetActive(true);
-                centrelineManager.SetActive(true);
                 watchmanFLX.SetActive(true);
                 amplatzerAMULET.SetActive(true);
                 deviceSelector.SetActive(false);
@@ -198,38 +182,7 @@ public class LessonManager : MonoBehaviour
                 laaMeasurementsGrabbable.GetComponent<UIOnEnableLocation>().SetLocation();
                 laaMeasurementsGrabbable.GetComponent<UIOnEnableLocation>().enabled = false;
                 break;
-
             case 4:
-                laaMeasurements.SetActive(true);
-                centrelineManager.SetActive(true);
-                watchmanFLX.SetActive(true);
-                amplatzerAMULET.SetActive(true);
-                deviceSelector.SetActive(false);
-                contourWarning.SetActive(false);
-                UpdateDeviceState(false);
-                UpdateTimelapseState(false);
-                compressionCases.GetComponent<SetAllInactive>().SetAllGameObjectsInactive();
-                compressionCasesUI.GetComponent<SetAllInactive>().SetAllGameObjectsInactive();               
-                laaMeasurementsGrabbable.GetComponent<UIOnEnableLocation>().SetLocation();
-                laaMeasurementsGrabbable.GetComponent<UIOnEnableLocation>().enabled = false;
-                break;
-
-            case 5:
-                laaMeasurements.SetActive(true);
-                centrelineManager.SetActive(true);
-                watchmanFLX.SetActive(true);
-                amplatzerAMULET.SetActive(true);
-                deviceSelector.SetActive(false);
-                contourWarning.SetActive(false);
-                UpdateDeviceState(false);
-                UpdateTimelapseState(false);
-                compressionCases.GetComponent<SetAllInactive>().SetAllGameObjectsInactive();
-                compressionCasesUI.GetComponent<SetAllInactive>().SetAllGameObjectsInactive();
-                laaMeasurementsGrabbable.GetComponent<UIOnEnableLocation>().SetLocation();
-                laaMeasurementsGrabbable.GetComponent<UIOnEnableLocation>().enabled = false;
-                break;
-
-            case 6:
                 laaMeasurements.SetActive(true);
                 centrelineManager.SetActive(true);
                 watchmanFLX.SetActive(true);
@@ -242,7 +195,7 @@ public class LessonManager : MonoBehaviour
                 laaMeasurementsGrabbable.GetComponent<UIOnEnableLocation>().SetLocation();
                 laaMeasurementsGrabbable.GetComponent<UIOnEnableLocation>().enabled = false;
                 break;
-            case 7:
+            case 5:
                 laaMeasurements.SetActive(true);
                 centrelineManager.SetActive(true);
                 watchmanFLX.SetActive(true);
@@ -257,7 +210,7 @@ public class LessonManager : MonoBehaviour
                 laaMeasurementsGrabbable.GetComponent<UIOnEnableLocation>().SetLocation();
                 laaMeasurementsGrabbable.GetComponent<UIOnEnableLocation>().enabled = false;
                 break;
-            case 8:
+            case 6:
                 laaMeasurements.SetActive(false);
                 centrelineManager.SetActive(false);
                 watchmanFLX.SetActive(false);
