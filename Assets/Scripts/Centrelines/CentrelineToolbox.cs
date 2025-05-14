@@ -118,7 +118,7 @@ public class CentrelineToolbox : MonoBehaviour
             {
                 if (i == LessonManager.Instance.currentLessonNumber)
                 {
-                    lessonButton.GetComponent<CentrelineButton>().SetButtonColor(new Color(0f, 0.55f, 1f));  
+                    lessonButton.GetComponent<CentrelineButton>().SetButtonColor(new Color(0f, 0.55f, 1f, 1f));  
                 }
             }
 

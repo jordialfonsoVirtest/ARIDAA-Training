@@ -519,7 +519,7 @@ public class LAAMeasurementsManager : MonoBehaviour
 
             RenderMeasurementsGraph();
             
-            //button.GetComponent<PointButton>().ButtonPress();
+            button.GetComponent<PointButton>().ButtonPress();
         }
     }
 
