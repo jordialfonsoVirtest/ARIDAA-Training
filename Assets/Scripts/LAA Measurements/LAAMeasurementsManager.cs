@@ -534,7 +534,7 @@ public class LAAMeasurementsManager : MonoBehaviour
                 buttonToggle.GetComponent<PointButton>().separatorMaterial = renderer.material;
             }
 
-            //button.GetComponent<PointButton>().ButtonPress();
+            button.GetComponent<PointButton>().ButtonPress();
         }
     }
 
