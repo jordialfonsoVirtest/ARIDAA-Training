@@ -192,6 +192,8 @@ public class LAAMeasurementsManager : MonoBehaviour
 
     [SerializeField] public Contour2D contour2D;
     [SerializeField] public MeasurementsGraph measurementsGraph;
+    [SerializeField] public List<GameObject> ToggleButtonList = new List<GameObject>();
+    [SerializeField] public GameObject currentSeparatorLine;
 
     [SerializeField] public GameObject activeCentrelineWarningUI;
     [SerializeField] public GameObject noContoursWarningUI;
@@ -457,6 +459,7 @@ public class LAAMeasurementsManager : MonoBehaviour
             noContoursWarningUI.SetActive(false);
             activeCentrelineWarningUI.SetActive(false);
         }
+        ToggleButtonList.Clear();
         foreach(Contours contour in currentCentrelineMeasures.contours)
         {
             GameObject button = Instantiate(ButtonPrefab);
@@ -489,7 +492,9 @@ public class LAAMeasurementsManager : MonoBehaviour
             buttonActive.GetComponent<PointButton>().SetIsToggle(false);
             button.GetComponent<PointButton>().SetIsToggle(true);
 
+            ToggleButtonList.Add(button);
             ascii++;
+            
 
             GameObject contourRenderer = Instantiate(ContoursRendererPrefab);
 
@@ -518,8 +523,18 @@ public class LAAMeasurementsManager : MonoBehaviour
             buttonActive.GetComponent<PointButton>().SetContourRender(contourRenderer);
 
             RenderMeasurementsGraph();
-            
-            button.GetComponent<PointButton>().ButtonPress();
+
+            int separatorLineIndex = 0;
+            foreach (GameObject buttonToggle in ToggleButtonList)
+            {
+                buttonToggle.GetComponent<PointButton>().separatorLine = measurementsGraph.GetComponent<MeasurementsGraph>().separatorLineList[separatorLineIndex];
+                separatorLineIndex++;
+
+                Renderer renderer = measurementsGraph.GetComponent<MeasurementsGraph>().separatorLineList[separatorLineIndex].GetComponent<Renderer>();
+                buttonToggle.GetComponent<PointButton>().separatorMaterial = renderer.material;
+            }
+
+            //button.GetComponent<PointButton>().ButtonPress();
         }
     }
 

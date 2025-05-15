@@ -13,9 +13,18 @@ public class PointButton : MonoBehaviour
 
     [SerializeField] private GameObject ContourRender;
 
+    public GameObject separatorLine;
+
+    public Material separatorMaterial;
+
     [SerializeField] private bool isActive = false;
 
     [SerializeField] private bool isToggle = true;
+
+    public void SetActiveSeparator(GameObject separatorLine)
+    {
+        separatorLine.SetActive(!separatorLine.activeSelf);
+    }
 
     public void SetIsToggle(bool isToggle)
     {
@@ -98,6 +107,7 @@ public class PointButton : MonoBehaviour
                     DestroyPointStored();
                     ToggleIsActive();
                     SetContourActive();
+                    LAAMeasurementsManager.Instance.currentSeparatorLine.GetComponent<Renderer>().material = separatorMaterial;
 
                 }
                 else
@@ -120,14 +130,22 @@ public class PointButton : MonoBehaviour
                     if (LAAMeasurementsManager.Instance.PointValues)
                     {
                         LAAMeasurementsManager.Instance.PointValues.transform.GetChild(0).gameObject.GetComponent<TMP_Text>().text = name;
-                        LAAMeasurementsManager.Instance.PointValues.transform.GetChild(1).gameObject.GetComponent<TMP_Text>().text = (Mathf.Round(contour.measurements.D1 * 100.0f) * 0.01f).ToString();
-                        LAAMeasurementsManager.Instance.PointValues.transform.GetChild(2).gameObject.GetComponent<TMP_Text>().text = (Mathf.Round(contour.measurements.Dmean * 100.0f) * 0.01f).ToString();
-                        LAAMeasurementsManager.Instance.PointValues.transform.GetChild(3).gameObject.GetComponent<TMP_Text>().text = (Mathf.Round(contour.measurements.D2 * 100.0f) * 0.01f).ToString();
-                        LAAMeasurementsManager.Instance.PointValues.transform.GetChild(4).gameObject.GetComponent<TMP_Text>().text = (Mathf.Round(contour.measurements.PDMD * 100.0f) * 0.01f).ToString();
+                        LAAMeasurementsManager.Instance.PointValues.transform.GetChild(1).gameObject.GetComponent<TMP_Text>().text = (Mathf.Round(contour.measurements.D1 * 100.0f) * 0.01f).ToString().Substring(0, (Mathf.Round(contour.measurements.D1 * 100.0f) * 0.01f).ToString().Length - 1);
+                        LAAMeasurementsManager.Instance.PointValues.transform.GetChild(2).gameObject.GetComponent<TMP_Text>().text = (Mathf.Round(contour.measurements.Dmean * 100.0f) * 0.01f).ToString().Substring(0, (Mathf.Round(contour.measurements.Dmean * 100.0f) * 0.01f).ToString().Length - 1);
+                        LAAMeasurementsManager.Instance.PointValues.transform.GetChild(3).gameObject.GetComponent<TMP_Text>().text = (Mathf.Round(contour.measurements.D2 * 100.0f) * 0.01f).ToString().Substring(0, (Mathf.Round(contour.measurements.D2 * 100.0f) * 0.01f).ToString().Length - 1);
+                        LAAMeasurementsManager.Instance.PointValues.transform.GetChild(4).gameObject.GetComponent<TMP_Text>().text = (Mathf.Round(contour.measurements.PDMD * 100.0f) * 0.01f).ToString().Substring(0, (Mathf.Round(contour.measurements.PDMD * 100.0f) * 0.01f).ToString().Length - 1);
                     }
 
                     LAAMeasurementsManager.Instance.CalculateRecommendedSizes();
+
+                    if (LAAMeasurementsManager.Instance.currentSeparatorLine)
+                    {
+                        LAAMeasurementsManager.Instance.currentSeparatorLine.GetComponent<Renderer>().material = separatorMaterial;
+                    }
+                    LAAMeasurementsManager.Instance.currentSeparatorLine = separatorLine;
+                    LAAMeasurementsManager.Instance.currentSeparatorLine.GetComponent<Renderer>().material = LAAMeasurementsManager.Instance.contourActiveMaterial;
                 }
+                SetActiveSeparator(separatorLine);
             }
             else
             {
@@ -158,6 +176,13 @@ public class PointButton : MonoBehaviour
 
                         LAAMeasurementsManager.Instance.currentContourActiveButton = this.gameObject;
                     }
+
+                    if (LAAMeasurementsManager.Instance.currentSeparatorLine)
+                    {
+                        LAAMeasurementsManager.Instance.currentSeparatorLine.GetComponent<Renderer>().material = separatorMaterial;
+                    }
+                    LAAMeasurementsManager.Instance.currentSeparatorLine = separatorLine;
+                    LAAMeasurementsManager.Instance.currentSeparatorLine.GetComponent<Renderer>().material = LAAMeasurementsManager.Instance.contourActiveMaterial;
 
                 }
 

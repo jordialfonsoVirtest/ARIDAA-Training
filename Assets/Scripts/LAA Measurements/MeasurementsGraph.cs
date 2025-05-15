@@ -16,6 +16,7 @@ public class MeasurementsGraph : MonoBehaviour
 
     [SerializeField] private GameObject separatorLinePrefab;
     [SerializeField] private GameObject separatorLines;
+    [SerializeField] public List<GameObject> separatorLineList = new List<GameObject>();
 
     [SerializeField] private GameObject MaxText;
     [SerializeField] private GameObject MinText;
@@ -117,6 +118,7 @@ public class MeasurementsGraph : MonoBehaviour
             DMeanLine.positionCount = contourCount; 
             PDMDLine.positionCount = contourCount;
 
+            separatorLineList.Clear();
             for (int i = 0; i < contourCount; i++)
             {
 
@@ -135,6 +137,8 @@ public class MeasurementsGraph : MonoBehaviour
                 separator.GetComponent<LineRenderer>().positionCount = 2;
                 separator.GetComponent<LineRenderer>().SetPosition(0, new Vector3((float)(i * xDistance), minPoint, 0));
                 separator.GetComponent<LineRenderer>().SetPosition(1, new Vector3((float)(i * xDistance), maxPoint, 0));
+                separatorLineList.Add(separator);
+                separator.SetActive(false);
 
             }
 

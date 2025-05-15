@@ -196,7 +196,7 @@ public class LessonManager : MonoBehaviour
                 laaMeasurementsGrabbable.GetComponent<UIOnEnableLocation>().enabled = false;
                 break;
             case 5:
-                laaMeasurements.SetActive(true);
+                laaMeasurements.SetActive(false);
                 centrelineManager.SetActive(true);
                 watchmanFLX.SetActive(true);
                 amplatzerAMULET.SetActive(true);
