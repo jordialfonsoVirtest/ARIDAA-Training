@@ -457,5 +457,7 @@ MonoBehaviour:
   PointStoredPrefab: {fileID: 8983586845072413701, guid: 045d961108f52994baf4945cf781d9c9, type: 3}
   PointStored: {fileID: 0}
   ContourRender: {fileID: 0}
+  separatorLine: {fileID: 0}
+  separatorMaterial: {fileID: 2100000, guid: ff223f21d45c83442a6c45de20876d8d, type: 2}
   isActive: 0
   isToggle: 1

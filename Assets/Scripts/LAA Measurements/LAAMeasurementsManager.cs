@@ -529,12 +529,9 @@ public class LAAMeasurementsManager : MonoBehaviour
             {
                 buttonToggle.GetComponent<PointButton>().separatorLine = measurementsGraph.GetComponent<MeasurementsGraph>().separatorLineList[separatorLineIndex];
                 separatorLineIndex++;
-
-                Renderer renderer = measurementsGraph.GetComponent<MeasurementsGraph>().separatorLineList[separatorLineIndex].GetComponent<Renderer>();
-                buttonToggle.GetComponent<PointButton>().separatorMaterial = renderer.material;
             }
 
-            button.GetComponent<PointButton>().ButtonPress();
+            //button.GetComponent<PointButton>().ButtonPress();
         }
     }
 
