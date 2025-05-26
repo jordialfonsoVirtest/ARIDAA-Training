@@ -5,8 +5,8 @@ Shader "Slices/X_Downwards" {
       _Offset("Extrusion Amount", Range(97,195)) = 0
     }
         SubShader{
-          Tags { "RenderType" = "Transparent" }
-        
+          Tags { "RenderType" = "Opaque" }
+          Cull Off
           CGPROGRAM
           #pragma surface surf Lambert vertex:vert
           struct Input {
@@ -29,7 +29,6 @@ Shader "Slices/X_Downwards" {
               clip(frac((IN.objPos.x + _Offset) * 0.001) - 0.15);
               o.Albedo = tex2D(_MainTex, IN.uv_MainTex).rgb;
               o.Normal = UnpackNormal(tex2D(_BumpMap, IN.uv_BumpMap));
-              o.Alpha = tex2D(_MainTex, IN.uv_MainTex).a;
           }
           ENDCG
     }

@@ -82,6 +82,7 @@ public class LAAColliderManager : MonoBehaviour
         if (previousTimelapseCase != null && previousTimelapseCase != timelapseList.transform.GetChild(caseTimelapse).gameObject) {
             previousTimelapseCase.SetActive(false);
             timelapseList.transform.GetChild(caseTimelapse).gameObject.SetActive(true);
+            timelapseList.transform.GetChild(caseTimelapse).position = previousTimelapseCase.transform.position;
             previousTimelapseCase = timelapseList.transform.GetChild(caseTimelapse).gameObject;
         }
 

@@ -13,14 +13,16 @@ public class PointStored : MonoBehaviour
     [SerializeField] private TMP_Text PDMD;
     [SerializeField] private TMP_Text Device1;
     [SerializeField] private TMP_Text Device2;
+    [SerializeField] private TMP_Text Depth;
 
-    public void SetPointTexts(string Point, string D1, string DMean, string D2, string PDMD, string Device1, string Device2)
+    public void SetPointTexts(string Point, string D1, string DMean, string D2, string PDMD, string Depth, string Device1, string Device2)
     {
         this.Point.text = Point;
         this.D1.text = D1.Substring(0, D1.Length - 1);
         this.DMean.text = DMean.Substring(0, DMean.Length - 1);
         this.D2.text = D2.Substring(0, D2.Length - 1);
         this.PDMD.text = PDMD.Substring(0, PDMD.Length - 1);
+        this.Depth.text = Depth.Substring(0, Depth.Length - 1);
     }
 
     // Start is called before the first frame update

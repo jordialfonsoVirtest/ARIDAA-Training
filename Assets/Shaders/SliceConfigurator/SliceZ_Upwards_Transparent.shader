@@ -9,10 +9,6 @@ Shader "Slices/Z_Upwards_Transparent" {
           Tags {"RenderType" = "Transparent" "IgnoreProjector" = "True"}
           Cull Front
           Blend DstColor SrcColor
-    Pass {
-      //ZWrite On
-      //ColorMask 0
-    }
           CGPROGRAM
           #pragma surface surf Lambert vertex:vert alpha:fade
           struct Input {

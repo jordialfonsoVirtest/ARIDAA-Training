@@ -65,6 +65,7 @@ public class PointButton : MonoBehaviour
                                                         (Mathf.Round(contour.measurements.Dmean * 100.0f) * 0.01f).ToString(),
                                                         (Mathf.Round(contour.measurements.D2 * 100.0f) * 0.01f).ToString(),
                                                         (Mathf.Round(contour.measurements.PDMD * 100.0f) * 0.01f).ToString(),
+                                                        (Mathf.Round(contour.measurements.height_LAA * 100.0f) * 0.01f).ToString(),
                                                         "0",
                                                         "0");
         point.GetComponent<RectTransform>().localScale = new Vector3(1.0f, 1.0f, 1.0f);
@@ -134,6 +135,7 @@ public class PointButton : MonoBehaviour
                         LAAMeasurementsManager.Instance.PointValues.transform.GetChild(2).gameObject.GetComponent<TMP_Text>().text = (Mathf.Round(contour.measurements.Dmean * 100.0f) * 0.01f).ToString().Substring(0, (Mathf.Round(contour.measurements.Dmean * 100.0f) * 0.01f).ToString().Length - 1);
                         LAAMeasurementsManager.Instance.PointValues.transform.GetChild(3).gameObject.GetComponent<TMP_Text>().text = (Mathf.Round(contour.measurements.D2 * 100.0f) * 0.01f).ToString().Substring(0, (Mathf.Round(contour.measurements.D2 * 100.0f) * 0.01f).ToString().Length - 1);
                         LAAMeasurementsManager.Instance.PointValues.transform.GetChild(4).gameObject.GetComponent<TMP_Text>().text = (Mathf.Round(contour.measurements.PDMD * 100.0f) * 0.01f).ToString().Substring(0, (Mathf.Round(contour.measurements.PDMD * 100.0f) * 0.01f).ToString().Length - 1);
+                        LAAMeasurementsManager.Instance.PointValues.transform.GetChild(5).gameObject.GetComponent<TMP_Text>().text = (Mathf.Round(contour.measurements.height_LAA * 100.0f) * 0.01f).ToString().Substring(0, (Mathf.Round(contour.measurements.height_LAA * 100.0f) * 0.01f).ToString().Length - 1);
                     }
 
                     LAAMeasurementsManager.Instance.CalculateRecommendedSizes();
@@ -161,10 +163,11 @@ public class PointButton : MonoBehaviour
                     if (LAAMeasurementsManager.Instance.PointValues)
                     {
                         LAAMeasurementsManager.Instance.PointValues.transform.GetChild(0).gameObject.GetComponent<TMP_Text>().text = name;
-                        LAAMeasurementsManager.Instance.PointValues.transform.GetChild(1).gameObject.GetComponent<TMP_Text>().text = (Mathf.Round(contour.measurements.D1 * 100.0f) * 0.01f).ToString();
-                        LAAMeasurementsManager.Instance.PointValues.transform.GetChild(2).gameObject.GetComponent<TMP_Text>().text = (Mathf.Round(contour.measurements.Dmean * 100.0f) * 0.01f).ToString();
-                        LAAMeasurementsManager.Instance.PointValues.transform.GetChild(3).gameObject.GetComponent<TMP_Text>().text = (Mathf.Round(contour.measurements.D2 * 100.0f) * 0.01f).ToString();
-                        LAAMeasurementsManager.Instance.PointValues.transform.GetChild(4).gameObject.GetComponent<TMP_Text>().text = (Mathf.Round(contour.measurements.PDMD * 100.0f) * 0.01f).ToString();
+                        LAAMeasurementsManager.Instance.PointValues.transform.GetChild(1).gameObject.GetComponent<TMP_Text>().text = (Mathf.Round(contour.measurements.D1 * 100.0f) * 0.01f).ToString().Substring(0, (Mathf.Round(contour.measurements.D1 * 100.0f) * 0.01f).ToString().Length - 1);
+                        LAAMeasurementsManager.Instance.PointValues.transform.GetChild(2).gameObject.GetComponent<TMP_Text>().text = (Mathf.Round(contour.measurements.Dmean * 100.0f) * 0.01f).ToString().Substring(0, (Mathf.Round(contour.measurements.Dmean * 100.0f) * 0.01f).ToString().Length - 1);
+                        LAAMeasurementsManager.Instance.PointValues.transform.GetChild(3).gameObject.GetComponent<TMP_Text>().text = (Mathf.Round(contour.measurements.D2 * 100.0f) * 0.01f).ToString().Substring(0, (Mathf.Round(contour.measurements.D2 * 100.0f) * 0.01f).ToString().Length - 1);
+                        LAAMeasurementsManager.Instance.PointValues.transform.GetChild(4).gameObject.GetComponent<TMP_Text>().text = (Mathf.Round(contour.measurements.PDMD * 100.0f) * 0.01f).ToString().Substring(0, (Mathf.Round(contour.measurements.PDMD * 100.0f) * 0.01f).ToString().Length - 1);
+                        LAAMeasurementsManager.Instance.PointValues.transform.GetChild(5).gameObject.GetComponent<TMP_Text>().text = (Mathf.Round(contour.measurements.height_LAA * 100.0f) * 0.01f).ToString().Substring(0, (Mathf.Round(contour.measurements.height_LAA * 100.0f) * 0.01f).ToString().Length - 1);
                     }
                     LAAMeasurementsManager.Instance.CalculateRecommendedSizes();
                     SetCurrentContour(contour);

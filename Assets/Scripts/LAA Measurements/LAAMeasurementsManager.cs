@@ -531,7 +531,7 @@ public class LAAMeasurementsManager : MonoBehaviour
                 separatorLineIndex++;
             }
 
-            //button.GetComponent<PointButton>().ButtonPress();
+            button.GetComponent<PointButton>().ButtonPress();
         }
     }
 
@@ -563,6 +563,7 @@ public class LAAMeasurementsManager : MonoBehaviour
             PointValues.transform.GetChild(2).gameObject.GetComponent<TMP_Text>().text = "0";
             PointValues.transform.GetChild(3).gameObject.GetComponent<TMP_Text>().text = "0";
             PointValues.transform.GetChild(4).gameObject.GetComponent<TMP_Text>().text = "0";
+            PointValues.transform.GetChild(5).gameObject.GetComponent<TMP_Text>().text = "0";
         }
 
         currentCentrelineMeasures = null;
