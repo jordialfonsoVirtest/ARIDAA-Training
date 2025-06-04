@@ -27,10 +27,12 @@ public class LessonManager : MonoBehaviour
 
     public GameObject watchmanFLX;
     public GameObject amplatzerAMULET;
+   
 
     public GameObject deviceSelector;
     public GameObject compressionCases;
     public GameObject compressionCasesUI;
+    public GameObject deviceSlider;
 
     public GameObject contourWarning;
 
@@ -145,6 +147,7 @@ public class LessonManager : MonoBehaviour
                 laaMeasurements.SetActive(false);                
                 centrelineManager.SetActive(false);
                 deviceSelector.SetActive(false);
+                deviceSlider.SetActive(false);
                 contourWarning.SetActive(false);
                 UpdateDeviceState(false);
                 UpdateTimelapseState(false);
@@ -160,6 +163,7 @@ public class LessonManager : MonoBehaviour
                 watchmanFLX.SetActive(false);
                 amplatzerAMULET.SetActive(false);
                 deviceSelector.SetActive(false);
+                deviceSlider.SetActive(false);
                 contourWarning.SetActive(false);
                 UpdateDeviceState(false);
                 UpdateTimelapseState(false);
@@ -174,6 +178,7 @@ public class LessonManager : MonoBehaviour
                 watchmanFLX.SetActive(true);
                 amplatzerAMULET.SetActive(true);
                 deviceSelector.SetActive(false);
+                deviceSlider.SetActive(false);
                 contourWarning.SetActive(false);
                 UpdateDeviceState(false);
                 UpdateTimelapseState(false);
@@ -188,6 +193,7 @@ public class LessonManager : MonoBehaviour
                 watchmanFLX.SetActive(true);
                 amplatzerAMULET.SetActive(true);
                 deviceSelector.SetActive(true);
+                deviceSlider.SetActive(false);
                 contourWarning.SetActive(ContourWarningCheck());
                 UpdateDeviceState(false);
                 UpdateTimelapseState(false);
@@ -205,6 +211,7 @@ public class LessonManager : MonoBehaviour
                 UpdateTimelapseState(true);
                 DeviceSelectorManager.Instance.isCompressionLesson = false;
                 deviceSelector.SetActive(false);
+                deviceSlider.SetActive(true);
                 compressionCases.GetComponent<SetAllInactive>().SetAllGameObjectsInactive();
                 compressionCasesUI.GetComponent<SetAllInactive>().SetAllGameObjectsInactive();
                 laaMeasurementsGrabbable.GetComponent<UIOnEnableLocation>().SetLocation();

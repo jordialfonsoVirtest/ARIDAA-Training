@@ -189,6 +189,7 @@ public class LAAMeasurementsManager : MonoBehaviour
     public GameObject currentContourRender;
     public Contours currentContour;
     public GameObject currentContourActiveButton;
+    [SerializeField] public GameObject AmuletInteractable;
 
     [SerializeField] public Contour2D contour2D;
     [SerializeField] public MeasurementsGraph measurementsGraph;
@@ -518,6 +519,8 @@ public class LAAMeasurementsManager : MonoBehaviour
             contourRenderer.transform.localRotation = new Quaternion(0.0f, 0.0f, 0.0f, 0.0f);
 
             contourRenderer.GetComponent<ContourRenderer>().Render(contour);
+            contourRenderer.GetComponent<Oculus.Interaction.SnapInteractor>().InjectPointableElement(AmuletInteractable.GetComponent<Oculus.Interaction.Grabbable>());
+            contourRenderer.GetComponent<Oculus.Interaction.SnapInteractor>().enabled = true;
 
             button.GetComponent<PointButton>().SetContourRender(contourRenderer);
             buttonActive.GetComponent<PointButton>().SetContourRender(contourRenderer);
@@ -531,7 +534,7 @@ public class LAAMeasurementsManager : MonoBehaviour
                 separatorLineIndex++;
             }
 
-            button.GetComponent<PointButton>().ButtonPress();
+            //button.GetComponent<PointButton>().ButtonPress();
         }
     }
 

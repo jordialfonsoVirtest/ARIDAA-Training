@@ -91,7 +91,11 @@ public class CentrelineRenderer : MonoBehaviour
         {
 
             lineRenderer.SetPosition(i, new Vector3((float)centrelinePoints[i].coordx, (float)centrelinePoints[i].coordy, (float)centrelinePoints[i].coordz));
-            
+            GameObject Position = new GameObject();
+            Position.transform.parent = transform;
+            Position.name = "Position " + i.ToString();
+            Position.transform.localPosition = new Vector3((float)centrelinePoints[i].coordx, (float)centrelinePoints[i].coordy, (float)centrelinePoints[i].coordz);
+
         }
         lineRenderer.Simplify(0.01f);
     }
