@@ -27,13 +27,11 @@ public class TransparencyToggle : MonoBehaviour
         {
             heart.transform.gameObject.GetComponent<MeshRenderer>().material = opaqueMaterial;
             isTransparent = false;
-            SliceConfiguratorManager.Instance.SetIsTransparent(false);
         }
         else
         {
             heart.transform.gameObject.GetComponent<MeshRenderer>().material = transparentMaterial;
             isTransparent = true;
-            SliceConfiguratorManager.Instance.SetIsTransparent(true);
         }
 
     }
