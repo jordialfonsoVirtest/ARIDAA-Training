@@ -38,7 +38,6 @@ public class DeviceIntroduction : MonoBehaviour
     {
 
         int IntroductionDistance = Mathf.FloorToInt(totalSteps * GetSliderDistance());
-        Debug.Log("IntroductionDistance: " + IntroductionDistance.ToString());
 
         if (IntroductionDistance < totalSteps)
         {
